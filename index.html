@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wenjun Cao</title>
+<meta name="description" content="Wenjun Cao is an independent researcher studying the fundamental mechanisms by which AI enters human civilization.">
+<meta name="author" content="Wenjun Cao">
+<meta property="og:title" content="Wenjun Cao">
+<meta property="og:description" content="Independent researcher. The fundamental mechanisms by which AI enters human civilization.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://directedlink.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://directedlink.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EEF0EE'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%231D2127' stroke-width='2'/%3E%3Cline x1='16' y1='5' x2='16' y2='27' stroke='%232A4A70' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EEF0EE;        /* cool, faintly grey-green paper */
+    --paper-raised: #F6F7F6;
+    --ink: #1D2127;
+    --ink-soft: #596069;
+    --rule: #C9CED3;
+    --accent: #2A4A70;       /* fountain-pen blue */
+    --kin: #6E2A2A;          /* oxblood, shared with the paper page */
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    --gutter: 10rem;
+    --measure: 40rem;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper: #16191D;
+      --paper-raised: #1C2025;
+      --ink: #E3E5E8;
+      --ink-soft: #9CA3AC;
+      --rule: #30363D;
+      --accent: #93B2D6;
+      --kin: #D39A8C;
+    }
+  }
+
+  *{ box-sizing: border-box; }
+  html{ background: var(--paper); font-size: 100%; }
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover{ color: var(--kin); }
+  a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  ::selection{ background: var(--rule); color: var(--ink); }
+
+  .page{
+    max-width: calc(var(--gutter) + var(--measure) + 3rem);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ---------- Masthead ---------- */
+  header{
+    padding: clamp(3rem, 9vh, 5rem) 0 2.2rem;
+    padding-left: var(--gutter);
+  }
+  h1{
+    margin: 0 0 1.2rem;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 60;
+  }
+  .bio{ max-width: var(--measure); }
+  .bio p{ margin: 0 0 .7rem; }
+  .contact{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 1.5rem;
+    margin-top: 1.2rem;
+    font-family: var(--sans);
+    font-size: .92rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Work ---------- */
+  main{ border-top: 1px solid var(--rule); padding: .6rem 0 1.4rem; }
+  .year{
+    display: grid;
+    grid-template-columns: var(--gutter) minmax(0, var(--measure));
+    padding: 1.8rem 0 .6rem;
+  }
+  .year + .year{ border-top: 1px solid var(--rule); }
+  .year h2{
+    margin: 0;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: .9;
+    color: var(--accent);
+    font-variant-numeric: oldstyle-nums;
+    font-feature-settings: "onum" 1;
+    font-variation-settings: "opsz" 60;
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+  }
+  .works{ list-style: none; margin: 0; padding: 0; }
+  .works li{ margin: 0 0 1.5rem; }
+  .works li:last-child{ margin-bottom: .8rem; }
+  .works h3{
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .title{
+    color: var(--ink);
+    text-decoration: none;
+    background-image: linear-gradient(var(--rule), var(--rule));
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+  }
+  a.title:hover{ color: var(--kin); background-image: linear-gradient(var(--kin), var(--kin)); }
+  .desc{
+    margin: .3rem 0 .35rem;
+    color: var(--ink-soft);
+  }
+  .meta{
+    margin: 0;
+    font-family: var(--sans);
+    font-size: .82rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem 1.25rem;
+  }
+  .meta a{ font-weight: 500; }
+
+  footer{
+    border-top: 1px solid var(--rule);
+    padding: 1.5rem 0 2.5rem var(--gutter);
+    font-family: var(--sans);
+    font-size: .88rem;
+    color: var(--ink-soft);
+  }
+  footer p{ margin: 0; }
+
+  @media (max-width: 640px){
+    :root{ --gutter: 0rem; }
+    header{ padding-top: 3.5rem; }
+    .year{ grid-template-columns: 1fr; padding-top: 2rem; }
+    .year h2{ position: static; font-size: 2.6rem; margin-bottom: 1.2rem; }
+  }
+  @media print{
+    body, html{ background: #fff; }
+    .year h2{ position: static; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Wenjun Cao</h1>
+    <div class="bio">
+      <p>I am an independent researcher. I study the fundamental mechanisms by which AI enters human civilization, and I build things to change where this is going.</p>
+      <p>My technical work is in reinforcement learning, LLM fine-tuning, and safety alignment.</p>
+    </div>
+    <p class="contact"><a href="mailto:wenjun.cao.research@gmail.com">wenjun.cao.research@gmail.com</a><a href="https://scholar.google.com/citations?user=8guQeIAAAAAJ">Google Scholar</a></p>
+  </header>
+
+  <main>
+    <section class="year" aria-labelledby="y2026">
+      <h2 id="y2026">2026</h2>
+      <ul class="works">
+        <li>
+          <h3><a class="title" href="https://directedlink.github.io/the-order-of-finite-beings/">The Order of Finite Beings: AI and the Foundations of Human Civilization</a></h3>
+          <p class="desc">Simply by surpassing human ability, AI undermines democracy, science, markets, and morality, because each of them assumes that no one is all-knowing or all-powerful.</p>
+          <p class="meta"><span>Working paper</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7476738">SSRN</a></p>
+        </li>
+        <li>
+          <h3><a class="title" href="https://directedlink.github.io/featherfell/">Featherfell: Paper Marking Platform</a></h3>
+          <p class="desc">Lets researchers keep a record of the papers they come across and read. The record grows one paper at a time and cannot be mass-produced.</p>
+          <p class="meta"><span>Platform</span><a href="https://featherfell.com">featherfell.com</a></p>
+        </li>
+        <li>
+          <h3><a class="title" href="https://openreview.net/forum?id=FGZt2TsZRl">Position: Generative Models Erode Human Temporal Learning Through Market Selection</a></h3>
+          <p class="desc">Generative AI can push skilled human work out of the market, even before AGI. When telling human work from AI output costs more than it is worth, buyers stop checking and pay the same for both. Better-aligned models make the two even harder to tell apart.</p>
+          <p class="meta"><span>ICML 2026, Position Paper Track</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="year" aria-labelledby="y2025">
+      <h2 id="y2025">2025</h2>
+      <ul class="works">
+        <li>
+          <h3><a class="title" href="https://arxiv.org/abs/2510.20612">Black Box Absorption: LLMs Undermining Innovative Ideas</a></h3>
+          <p class="desc">Ideas that users share with AI platforms can be absorbed and reused without credit. Proposes standards that let users control, trace, and share in the value of their ideas.</p>
+          <p class="meta"><span>arXiv 2510.20612</span></p>
+        </li>
+        <li>
+          <h3><a class="title" href="https://arxiv.org/abs/2509.15932">The Alignment Bottleneck</a></h3>
+          <p class="desc">An AI trained on human feedback can only be as well aligned as human judgment allows. Adding more feedback cannot push past this limit.</p>
+          <p class="meta"><span>arXiv 2509.15932</span></p>
+        </li>
+        <li>
+          <h3><a class="title" href="https://arxiv.org/abs/2505.04578">Fight Fire with Fire: Defending Against Malicious RL Fine-Tuning via Reward Neutralization</a></h3>
+          <p class="desc">Stops malicious RL fine-tuning from stripping a model's safety protections. The model learns to refuse in a way that gives the attacker no reward to exploit.</p>
+          <p class="meta"><span>arXiv 2505.04578</span></p>
+        </li>
+        <li>
+          <h3><a class="title" href="https://arxiv.org/abs/2504.18766">Dynamic Action Interpolation: A Universal Approach for Accelerating Reinforcement Learning with Expert Guidance</a></h3>
+          <p class="desc">Speeds up reinforcement learning by letting an expert guide the learner's actions early in training, then gradually handing control over to the learner.</p>
+          <p class="meta"><span>arXiv 2504.18766</span></p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Wenjun Cao, independent researcher</p>
+  </footer>
+
+</div>
+</body>
+</html>
