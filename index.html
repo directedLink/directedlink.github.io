@@ -54,8 +54,8 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:hover{ color: var(--kin); }
+  a{ color: var(--accent); text-decoration: none; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover{ color: var(--kin); text-decoration: underline; }
   a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
   ::selection{ background: var(--rule); color: var(--ink); }
 
@@ -123,12 +123,8 @@
   .title{
     color: var(--ink);
     text-decoration: none;
-    background-image: linear-gradient(var(--rule), var(--rule));
-    background-size: 100% 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
   }
-  a.title:hover{ color: var(--kin); background-image: linear-gradient(var(--kin), var(--kin)); }
+  a.title:hover{ color: var(--kin); text-decoration: underline; }
   .desc{
     margin: .3rem 0 .35rem;
     color: var(--ink-soft);
