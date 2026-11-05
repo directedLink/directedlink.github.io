@@ -1,0 +1,157 @@
+:root{
+  --paper: #EEF0EE;
+  --paper-raised: #F6F7F6;
+  --ink: #1D2127;
+  --ink-soft: #596069;
+  --rule: #C9CED3;
+  --accent: #2A4A70;
+  --kin: #6E2A2A;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --gutter: 10rem;
+  --measure: 40rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper: #16191D;
+    --paper-raised: #1C2025;
+    --ink: #E3E5E8;
+    --ink-soft: #9CA3AC;
+    --rule: #30363D;
+    --accent: #93B2D6;
+    --kin: #D39A8C;
+  }
+}
+
+*{ box-sizing: border-box; }
+html{ background: var(--paper); font-size: 100%; }
+body{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a{ color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+a:hover{ color: var(--kin); text-decoration: underline; }
+a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+::selection{ background: var(--rule); color: var(--ink); }
+
+.page{
+  max-width: calc(var(--gutter) + var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  padding: clamp(2.5rem, 7vh, 4rem) 0 0 var(--gutter);
+  font-family: var(--sans);
+  font-size: .92rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.5rem;
+}
+.topbar .home{ color: var(--ink); font-weight: 500; }
+
+/* ---------- Blog index ---------- */
+.blog-head{ padding: 1.6rem 0 2rem var(--gutter); }
+.blog-head h1{
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 60;
+}
+.posts{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.posts li{
+  display: grid;
+  grid-template-columns: var(--gutter) minmax(0, var(--measure));
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.posts + footer{ border-top: none; }
+.posts time{
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--ink-soft);
+  padding-top: .2rem;
+}
+.posts h2{
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.posts h2 a{ color: var(--ink); }
+.posts h2 a:hover{ color: var(--kin); }
+
+/* ---------- Article ---------- */
+article{ padding: 1.6rem 0 1rem var(--gutter); }
+article header{ max-width: var(--measure); margin-bottom: 2rem; }
+article h1{
+  margin: 0 0 .8rem;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.2vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  font-variation-settings: "opsz" 48;
+}
+.byline{
+  margin: 0;
+  font-family: var(--sans);
+  font-size: .85rem;
+  color: var(--ink-soft);
+}
+.body{ max-width: var(--measure); font-size: 1.06rem; line-height: 1.65; }
+.body p{ margin: 0 0 1.15rem; }
+.body .status{
+  font-style: italic;
+  color: var(--ink-soft);
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+}
+.body .status b{ font-style: normal; font-weight: 600; }
+sup.fn{ font-size: .72em; line-height: 0; font-family: var(--sans); }
+sup.fn a{ padding: 0 .05em; }
+
+.footnotes{
+  max-width: var(--measure);
+  margin-top: 2.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+.footnotes ol{ margin: 0; padding-left: 1.4rem; }
+.footnotes li{ margin: 0 0 .55rem; overflow-wrap: anywhere; }
+.footnotes .back{ font-family: var(--sans); font-size: .8rem; margin-left: .3rem; }
+:target{ background: var(--paper-raised); }
+
+footer{
+  border-top: 1px solid var(--rule);
+  margin-top: 2rem;
+  padding: 1.5rem 0 2.5rem var(--gutter);
+  font-family: var(--sans);
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+footer p{ margin: 0; }
+
+@media (max-width: 640px){
+  :root{ --gutter: 0rem; }
+  .posts li{ grid-template-columns: 1fr; gap: .3rem; }
+}
+@media print{
+  body, html{ background: #fff; }
+}
